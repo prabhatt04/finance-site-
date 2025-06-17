@@ -1,0 +1,424 @@
+\!DOCTYPE html>
+html lang="en">
+head>
+meta charset="UTF-8" />
+meta name="viewport" content="width=device-width, initial-scale=1" />
+title>Finance Courses & Products | Learn & Invest with Confidence/title>
+link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #f8fafc;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+  a {
+    color: #818cf8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #a5b4fc;
+    outline: none;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(31, 41, 55, 0.85);
+    backdrop-filter: saturate(200%) blur(12px);
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgb(15 23 42 / 0.7);
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
+  .logo {
+    font-weight: 900;
+    font-size: 1.75rem;
+    color: #a5b4fc;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #cbd5e1;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -8px;
+    left: 0;
+    background: #818cf8;
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after, .nav-links a:focus::after {
+    width: 100%;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+    border-radius: 16px;
+    padding: 80px 40px;
+    margin: 56px auto;
+    max-width: 1000px;
+    text-align: center;
+    box-shadow:
+      0 8px 24px rgba(99, 102, 241, 0.4),
+      inset 0 0 50px rgba(147, 197, 253, 0.25);
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #e0e7ff;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    color: #c7d2fe;
+    margin-bottom: 32px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-primary {
+    background: #8b5cf6;
+    color: #fff;
+    border: none;
+    padding: 16px 48px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .btn-primary:hover, .btn-primary:focus {
+    background: #7c3aed;
+    box-shadow: 0 10px 28px rgba(124, 58, 237, 0.6);
+    outline: none;
+    transform: translateY(-3px);
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 64px;
+  }
+  h2.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #a5b4fc;
+    text-align: center;
+    margin-bottom: 48px;
+    letter-spacing: 1px;
+  }
+
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 32px;
+  }
+  .card {
+    background: rgba(99, 102, 241, 0.12);
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 16px rgb(67 56 202 / 0.15);
+    backdrop-filter: saturate(200%) blur(15px);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: default;
+  }
+  .card:hover, .card:focus-within {
+    box-shadow: 0 12px 28px rgba(139, 92, 246, 0.5);
+    transform: translateY(-6px);
+    outline: none;
+  }
+  .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    user-select: none;
+  }
+  .card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c7d2fe;
+    margin-bottom: 16px;
+  }
+  .card p {
+    flex-grow: 1;
+    color: #d1d5db;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid #8b5cf6;
+    color: #8b5cf6;
+    padding: 12px 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 9px;
+    cursor: pointer;
+    align-self: start;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .btn-secondary:hover, .btn-secondary:focus {
+    background: #8b5cf6;
+    color: white;
+    outline: none;
+  }
+
+  /* Benefits list */
+  .benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .benefit-item {
+    flex: 1 1 280px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .material-icons.benefit-icon {
+    font-size: 48px;
+    color: #818cf8;
+    flex-shrink: 0;
+    user-select: none;
+  }
+  .benefit-text {
+    color: #d1d5db;
+  }
+  .benefit-text h4 {
+    margin: 0 0 8px 0;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  .benefit-text p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Footer */
+  footer {
+    background: rgba(31, 41, 55, 0.85);
+    backdrop-filter: saturate(200%) blur(12px);
+    padding: 32px 24px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-align: center;
+    user-select: none;
+  }
+
+  /* Responsive */
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.25rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    nav {
+      padding: 12px 16px;
+    }
+    .nav-links {
+      display: none;
+    }
+    /* Add hamburger menu later if needed */
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+    }
+  }
+
+/style>
+/head>
+body>
+header role="banner">
+  nav aria-label="Primary navigation">
+    div class="logo" tabindex="0">FinEdu Pro/div>
+    div class="nav-links" role="navigation" aria-label="Main menu">
+      a href="#courses" tabindex="0">Courses/a>
+      a href="#products" tabindex="0">Finance Products/a>
+      a href="#notes" tabindex="0">Notes/a>
+      a href="#benefits" tabindex="0">Why Choose Us/a>
+      a href="#contact" tabindex="0">Contact/a>
+    /div>
+  /nav>
+/header>
+
+main>
+  section class="hero" role="region" aria-label="Introduction and main call to action">
+    h1 tabindex="0">Master Finance with Confidence/h1>
+    p tabindex="0">Explore premium finance courses, practical products, and expertly curated notes to elevate your financial literacy and investing skills./p>
+    button class="btn-primary" aria-label="Explore Our Courses">Explore Our Courses/button>
+  /section>
+
+  section id="courses" aria-labelledby="courses-title" role="region" class="container">
+    h2 class="section-title" id="courses-title" tabindex="0">Featured E-Learning Courses/h2>
+    div class="card-grid">
+      article class="card" tabindex="0" role="article" aria-label="Course: Investing Basics">
+        img
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ff960d43-3781-4204-a60e-42a8d601ae05.png"
+          alt="Stylized image representing Investing Basics course with financial icons and charts" />
+        h3>Investing Basics/h3>
+        p>Learn how to build your portfolio, understand stocks, bonds, and ETFs in this comprehensive beginner’s course./p>
+        button class="btn-secondary" aria-label="Learn more about Investing Basics">Learn More/button>
+      /article>
+      article class="card" tabindex="0" role="article" aria-label="Course: Personal Finance Management">
+        img
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a172175-669c-4710-bc73-9579e9014a21.png"
+          alt="Creative representation of managing personal finances with budget and savings visuals" />
+        h3>Personal Finance Management/h3>
+        p>Master budgeting, saving, and planning your financial future with practical tips and tools./p>
+        button class="btn-secondary" aria-label="Learn more about Personal Finance Management">Learn More/button>
+      /article>
+      article class="card" tabindex="0" role="article" aria-label="Course: Advanced Trading Strategies">
+        img
+          src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6185c8c7-bba6-4b65-a586-56502719a2ad.png"
+          alt="Abstract illustration of trading charts with arrows and financial data highlights" />
+        h3>Advanced Trading Strategies/h3>
+        p>Explore options, futures, and algorithmic trading to take your market skills to the next level./p>
+        button class="btn-secondary" aria-label="Learn more about Advanced Trading Strategies">Learn More/button>
+      /article>
+    /div>
+  /section>
+
+  section id="products" aria-labelledby="products-title" role="region" class="container">
+    h2 class="section-title" id="products-title" tabindex="0">Finance Products/h2>
+    div class="card-grid" role="list">
+      article class="card" tabindex="0" role="listitem" aria-label="Product: Investment Planner Tool">
+        img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d830637c-1bfe-4d22-89ac-94562b7a3fc1.png" 
+          alt="Screenshot visual of an investment planner tool dashboard" />
+        h3>Investment Planner Tool/h3>
+        p>Organize your investments and track performance with an intuitive, easy-to-use planner./p>
+      /article>
+      article class="card" tabindex="0" role="listitem" aria-label="Product: Tax Optimization Guide">
+        img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cfa3cba0-138b-4e11-83ee-ff728a92731c.png" 
+          alt="Illustration representing tax savings and optimization guide" />
+        h3>Tax Optimization Guide/h3>
+        p>Maximize returns and minimize liabilities with our expert-backed tax planning guide./p>
+      /article>
+      article class="card" tabindex="0" role="listitem" aria-label="Product: Retirement Planning Workbook">
+        img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99d2f836-f66f-4f7b-9cf1-8b2118e6fb36.png"
+          alt="Workbook cover depicting retirement planning graph and calculator" />
+        h3>Retirement Planning Workbook/h3>
+        p>Step-by-step worksheets and strategies to help plan a secure and comfortable retirement./p>
+      /article>
+    /div>
+  /section>
+
+  section id="notes" aria-labelledby="notes-title" role="region" class="container">
+    h2 class="section-title" id="notes-title" tabindex="0">Expertly Curated Finance Notes/h2>
+    div class="card-grid" role="list">
+      article class="card" tabindex="0" role="listitem" aria-label="Notes: Stock Market Essentials">
+        img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/baddcf13-49b8-408a-a830-f1f654be16fa.png" 
+          alt="Compact notebook with stock market notes and charts" />
+        h3>Stock Market Essentials/h3>
+        p>Quick reference notes covering key concepts and terms to navigate stock markets confidently./p>
+      /article>
+      article class="card" tabindex="0" role="listitem" aria-label="Notes: Budgeting & Expense Tracking">
+        img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c281c540-9dbf-4a0d-bf28-befa2f2feb16.png"
+          alt="Notebook and pen with budgeting charts and calculations" />
+        h3>Budgeting & Expense Tracking/h3>
+        p>Essential notes and tips to manage your money and reduce unnecessary expenditures effectively./p>
+      /article>
+      article class="card" tabindex="0" role="listitem" aria-label="Notes: Crypto Investing Insights">
+        img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f0293157-1e2b-48d2-9f3c-4da9c9c13496.png" 
+          alt="Digital notes showing cryptocurrency symbols and blockchain diagrams" />
+        h3>Crypto Investing Insights/h3>
+        p>A focused set of notes to understand cryptocurrency markets, risks, and opportunities./p>
+      /article>
+    /div>
+  /section>
+
+  section id="benefits" aria-labelledby="benefits-title" role="region" class="container">
+    h2 class="section-title" id="benefits-title" tabindex="0">Why Choose FinEdu Pro?/h2>
+    div class="benefits-list">
+      div class="benefit-item" tabindex="0">
+        span class="material-icons benefit-icon" aria-hidden="true">school/span>
+        div class="benefit-text">
+          h4>Trusted Expertise/h4>
+          p>Courses designed by certified finance professionals with decades of industry experience./p>
+        /div>
+      /div>
+      div class="benefit-item" tabindex="0">
+        span class="material-icons benefit-icon" aria-hidden="true">rocket_launch/span>
+        div class="benefit-text">
+          h4>Practical Knowledge/h4>
+          p>Actionable insights and real-world scenarios designed to help you apply concepts immediately./p>
+        /div>
+      /div>
+      div class="benefit-item" tabindex="0">
+        span class="material-icons benefit-icon" aria-hidden="true">support_agent/span>
+        div class="benefit-text">
+          h4>Dedicated Support/h4>
+          p>Responsive help desk and supportive community to guide you through your learning journey./p>
+        /div>
+      /div>
+      div class="benefit-item" tabindex="0">
+        span class="material-icons benefit-icon" aria-hidden="true">verified/span>
+        div class="benefit-text">
+          h4>Continuous Updates/h4>
+          p>Content is regularly updated to reflect the latest trends, regulations, and market changes./p>
+        /div>
+      /div>
+    /div>
+  /section>
+/main>
+
+footer id="contact" role="contentinfo" aria-label="Contact information and copyright">
+  p>© 2024 FinEdu Pro. All rights reserved./p>
+  p>Contact: a href="mailto:info@finedupro.com" tabindex="0">info@finedupro.com/a>/p>
+/footer>
+
+/body>
+/html>
